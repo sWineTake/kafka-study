@@ -16,7 +16,7 @@ public class CouponCreateProducer {
     }
 
     public void create(long userId) {
-        CompletableFuture<SendResult<String, Long>> coupons = kafkaTemplate.send("coupon_create", userId);
+        kafkaTemplate.send("coupon_create", userId);
     }
 
 }
